@@ -70,7 +70,8 @@ loop((t, dt, paused) => {
   const mobile = innerWidth < 700;
   const spread = reduced.matches ? 0 : Math.sin(progress * Math.PI) * 1.0;
   const rotate = paused ? 0 : 20 - 50 * Math.sin(progress * Math.PI);
-  const scale = mobile ? 0.62 : 0.75;
+  const availableHeight = stage.clientHeight;
+  const scale = (mobile ? 0.62 : 0.75) * Math.min(1, availableHeight / 440);
   platform.style.transform = `scale(${scale}) rotateX(${rotate + tiltX}deg) rotateY(${tiltY}deg) rotateZ(${-8 * spread}deg)`;
   platform.style.setProperty("--spread", String(spread));
   document.querySelector(".dashboard").style.transform =

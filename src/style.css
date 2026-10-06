@@ -1814,3 +1814,42 @@ body[data-page="depth"] {
     flex-wrap: wrap;
   }
 }
+.depth-sticky {
+  min-height: 0;
+}
+.depth-copy,
+.depth-bottom {
+  flex-shrink: 0;
+}
+.spatial-stage {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+}
+.depth-bottom {
+  margin-top: 0;
+  min-height: 44px;
+}
+.depth-copy h1 {
+  min-height: 0;
+}
+@media (max-width: 700px) {
+  .depth-sticky {
+    min-height: 0;
+  }
+  .spatial-stage {
+    min-height: 0;
+    height: auto;
+    margin-top: 0;
+  }
+  .depth-copy {
+    padding-top: 25px;
+  }
+  .depth-steps {
+    margin-top: 15px;
+  }
+  .depth-bottom {
+    padding-bottom: 12px;
+    min-height: 50px;
+  }
+}
